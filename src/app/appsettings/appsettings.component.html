@@ -1,0 +1,23 @@
+<mat-card class="setcard">
+  <h4>Select language</h4>
+  <mat-form-field>
+    <mat-label>Change language</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let l of language" [value]="l.value">
+        {{l.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <h4>Select Time</h4>
+  <button mat-button>
+  <mat-icon aria-hidden="false" aria-label="remove icon">remove</mat-icon>
+  </button>
+  <mat-slider min="1" max="10" step="1" [value]="time" tickInterval="1" thumbLabel ></mat-slider>
+  <button mat-button>
+  <mat-icon aria-hidden="false">add</mat-icon>
+  </button>
+  <h4>Count of words</h4>
+  <mat-form-field class="inpwords">
+    <input matInput placeholder="Word's number" [value]="wordsCnt">
+  </mat-form-field>
+</mat-card>

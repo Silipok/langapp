@@ -1,0 +1,16 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened class="example-sidenav">
+    <mat-nav-list>
+      <mat-list-item *ngFor="let item of menuItems">
+        <button mat-icon-button (click)="setActiveEl($event)" [value]="item.value">{{item.name}}</button>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content [ngSwitch]="activeEl">
+    <app-appsettings [language]="language" *ngSwitchCase="'settings'"></app-appsettings>
+    <app-appwords *ngSwitchCase="'words'"></app-appwords>
+    <app-appplaycard *ngSwitchCase="'play'"></app-appplaycard>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+
