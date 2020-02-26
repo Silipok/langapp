@@ -18,13 +18,11 @@ export interface Language {
 export class AppComponent {
   title = 'angular';
   activeEl = 'settings';
-  language: Language[] = [
-    {value: 'en', viewValue: 'english'}
-  ];
+  today = Date.now();
   menuItems: MenuItem[] = [
     {value: 'settings', name: 'Settings'},
     {value: 'play', name: 'Play'},
-    {value: 'words', name: 'Add word'},
+    {value: 'word', name: 'Add word'},
   ];
   setActiveEl(e) {
     console.log(e);

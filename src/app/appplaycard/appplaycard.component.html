@@ -1,1 +1,11 @@
-<p>appplaycard works!</p>
+<div class="container" style="margin: 5px">
+  <div>Translator</div>
+  <div>Translate this word: <strong>{{randomWord}}</strong></div>
+  <div>Enter answer:</div>
+  <input matInput [value]="playerWord" (change)="playerWord=$event.target.value" type="text"
+         style="margin: 10px 0; border: 1px solid black">
+  <div></div>
+  <div *ngIf="visibleTranslate">Translate: <span *ngFor="let word of translateWord">{{word}},</span></div>
+  <button mat-flat-button color="accent" style="margin-right: 5px" (click)="checkResult()">Check result</button>
+  <button mat-flat-button color="warn" (click)="showTranslate()">Show right Translate</button>
+</div>

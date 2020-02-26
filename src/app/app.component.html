@@ -1,16 +1,27 @@
-<mat-drawer-container class="example-container">
-  <mat-drawer mode="side" opened class="example-sidenav">
-    <mat-nav-list>
-      <mat-list-item *ngFor="let item of menuItems">
-        <button mat-icon-button (click)="setActiveEl($event)" [value]="item.value">{{item.name}}</button>
-      </mat-list-item>
-    </mat-nav-list>
-  </mat-drawer>
-  <mat-drawer-content [ngSwitch]="activeEl">
-    <app-appsettings [language]="language" *ngSwitchCase="'settings'"></app-appsettings>
-    <app-appwords *ngSwitchCase="'words'"></app-appwords>
-    <app-appplaycard *ngSwitchCase="'play'"></app-appplaycard>
-  </mat-drawer-content>
-</mat-drawer-container>
-
-
+<div class="example-layout">
+<div class="example-header">
+  <mat-toolbar color="primary">
+    My lang app
+  </mat-toolbar>
+</div>
+<div class="example-main">
+  <div class="example-nav">
+  <mat-nav-list>
+    <mat-list-item *ngFor="let item of menuItems">
+      <a matLine [routerLink]="item.value">{{ item.name }}</a>
+      <button mat-icon-button >
+        <mat-icon>info</mat-icon>
+      </button>
+    </mat-list-item>
+  </mat-nav-list>
+  </div>
+  <div class="example-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<div class="example-footer">
+  <mat-toolbar color="primary" style="justify-content: end">
+    {{today|date}}
+  </mat-toolbar>
+</div>
+</div>

@@ -8,13 +8,16 @@ import {
   MatButtonModule,
   MatCardModule,
   MatFormFieldModule, MatIconModule, MatInputModule,
-  MatListModule,
+  MatListModule, MatMenuModule,
   MatSelectModule,
   MatSidenavModule,
-  MatSliderModule
+  MatSliderModule, MatToolbarModule
 } from '@angular/material';
 import { AppwordsComponent } from './appwords/appwords.component';
 import { AppplaycardComponent } from './appplaycard/appplaycard.component';
+import {RoutingModule} from './routing/routing.module';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,13 @@ import { AppplaycardComponent } from './appplaycard/appplaycard.component';
     MatButtonModule,
     MatSliderModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    MatMenuModule,
+    MatToolbarModule,
+    RoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,16 +1,27 @@
-.example-container {
-  position: absolute;
-  top: 60px;
-  bottom: 60px;
-  left: 0;
-  right: 0;
-  background-color: rgba(63,81,181,0.5);
-}
-
-.example-sidenav {
+.example-layout {
   display: flex;
-  align-items: start;
-  justify-content: start;
-  width: 200px;
+  height: 100%;
+  flex-direction: column;
+}
+.example-header{
+  height: 9%;
+  background-color: #3f51b5;
+}
+.example-main{
+  display: flex;
+  align-content: flex-start;
+  height: 83%;
+  width: 100%;
+}
+.example-nav {
+  width: 30%;
   background: rgba(255, 0, 0, 0.5);
+}
+.example-content{
+  width: 66%;
+  height: 95%;
+}
+.example-footer{
+  display: flex;
+  justify-content: flex-end;
 }
